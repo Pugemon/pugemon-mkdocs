@@ -2,8 +2,8 @@
 
 Демо-страница темы. Здесь собраны все элементы, которые тема перекрашивает, чтобы проверить их в обеих схемах.
 
-[Начать с Python](python.md){ .md-button .md-button--primary }
-[Исходники](#){ .md-button }
+[Подключить к проекту](usage.md){ .md-button .md-button--primary }
+[Исходники](https://github.com/pugemon/pugemon-mkdocs){ .md-button }
 
 ## Блоки-примечания
 

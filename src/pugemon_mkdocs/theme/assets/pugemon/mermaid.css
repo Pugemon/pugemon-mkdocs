@@ -1,0 +1,33 @@
+/* Схемы mermaid в цветах Pugemon: узлы — как карточки (surface с приглушённой рамкой),
+   линии приглушённые, заметки — в цветах предупреждения. Бирюза остаётся за ссылками,
+   жёлтый — за главным действием, оранжевый accent — за метками (номера в sequence). */
+
+[data-md-color-scheme^="pugemon-"] {
+  --md-mermaid-font-family: var(--md-text-font-family), sans-serif;
+  --md-mermaid-edge-color: var(--pg-muted);
+  --md-mermaid-node-bg-color: var(--pg-surface);
+  --md-mermaid-node-fg-color: var(--pg-muted);
+  --md-mermaid-label-bg-color: var(--pg-bg);
+  --md-mermaid-label-fg-color: var(--pg-text);
+
+  --md-mermaid-sequence-actor-bg-color: var(--pg-surface);
+  --md-mermaid-sequence-actor-fg-color: var(--pg-text);
+  --md-mermaid-sequence-actor-border-color: var(--pg-muted);
+  --md-mermaid-sequence-actor-line-color: var(--pg-border);
+  --md-mermaid-sequence-actorman-bg-color: var(--pg-surface);
+  --md-mermaid-sequence-actorman-line-color: var(--pg-muted);
+  --md-mermaid-sequence-box-bg-color: var(--pg-sunken);
+  --md-mermaid-sequence-box-fg-color: var(--pg-text);
+  --md-mermaid-sequence-label-bg-color: var(--pg-surface);
+  --md-mermaid-sequence-label-fg-color: var(--pg-text);
+  --md-mermaid-sequence-loop-bg-color: var(--pg-sunken);
+  --md-mermaid-sequence-loop-fg-color: var(--pg-text);
+  --md-mermaid-sequence-loop-border-color: var(--pg-muted);
+  --md-mermaid-sequence-message-fg-color: var(--pg-text);
+  --md-mermaid-sequence-message-line-color: var(--pg-muted);
+  --md-mermaid-sequence-note-bg-color: var(--pg-warning-bg);
+  --md-mermaid-sequence-note-fg-color: var(--pg-warning-text);
+  --md-mermaid-sequence-note-border-color: var(--pg-warning-border);
+  --md-mermaid-sequence-number-bg-color: var(--pg-accent);
+  --md-mermaid-sequence-number-fg-color: var(--pg-bg);
+}

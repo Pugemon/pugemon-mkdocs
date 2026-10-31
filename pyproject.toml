@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pugemon-mkdocs"
+version = "0.1.0"
+description = "Тема Pugemon для MkDocs Material: Gruvbox, фирменный жёлтый, IBM Plex — подключается плагином pugemon"
+readme = "README.md"
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
+authors = [{ name = "Vyacheslav Ivanov" }]
+requires-python = ">=3.9"
+dependencies = ["mkdocs>=1.5", "mkdocs-material>=9.5"]
+keywords = ["mkdocs", "mkdocs-material", "mkdocs-plugin", "theme", "gruvbox"]
+classifiers = [
+    "Framework :: MkDocs",
+    "Programming Language :: Python :: 3",
+    "Topic :: Documentation",
+]
+
+[project.urls]
+Documentation = "https://pugemon.github.io/pugemon-mkdocs/"
+Source = "https://github.com/pugemon/pugemon-mkdocs"
+Changelog = "https://github.com/pugemon/pugemon-mkdocs/blob/main/CHANGELOG.md"
+
+[project.entry-points."mkdocs.plugins"]
+pugemon = "pugemon_mkdocs.plugin:PugemonPlugin"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+pugemon_mkdocs = ["theme/*.html", "theme/assets/pugemon/*"]
