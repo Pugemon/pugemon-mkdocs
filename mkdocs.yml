@@ -1,0 +1,68 @@
+site_name: pugemon docs
+site_description: Документация проектов pugemon
+# site_url: https://docs.example.org/   # укажите свой адрес
+
+theme:
+  name: material
+  language: ru
+  custom_dir: overrides
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  palette:
+    # Тёмная тема — основная, она же для систем без предпочтений
+    - media: "(prefers-color-scheme: dark)"
+      scheme: pugemon-dark
+      toggle:
+        icon: material/weather-sunny
+        name: Светлая тема
+    - media: "(prefers-color-scheme: light)"
+      scheme: pugemon-light
+      toggle:
+        icon: material/weather-night
+        name: Тёмная тема
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+
+extra_css:
+  - stylesheets/pugemon.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.keys
+  - pymdownx.mark
+
+nav:
+  - Главная: index.md
+  - Python: python.md
+  - C++: cpp.md
+  - Go: go.md
+
+extra:
+  generator: false

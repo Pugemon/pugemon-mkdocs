@@ -1,0 +1,34 @@
+{% extends "main.html" %}
+
+{#- Страница 404 в «режиме кино»: вся страница чёрно-белая -#}
+
+{% block extrahead %}
+  {{ super() }}
+  <style>
+    body { filter: grayscale(1) contrast(1.05); }
+    .pg-404 { text-align: center; padding: 4rem 0 3rem; }
+    .pg-404__code {
+      font-family: var(--md-code-font-family);
+      letter-spacing: 0.3em;
+      color: var(--md-default-fg-color--light);
+      margin: 0 0 1rem;
+    }
+    .pg-404 h1 { margin: 0 0 1.5rem; }
+    .pg-404__rule {
+      width: 8rem; height: 2px; margin: 0 auto 1.5rem;
+      background: var(--md-default-fg-color--lighter);
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <div class="pg-404">
+    <p class="pg-404__code">ОШИБКА 404</p>
+    <h1>Путь затерялся в тумане</h1>
+    <div class="pg-404__rule" aria-hidden="true"></div>
+    <p>Такой страницы нет. Возможно, её переименовали или ветер унёс её в другой раздел.</p>
+    <p>
+      <a class="md-button md-button--primary" href="{{ config.site_url | d(base_url ~ '/', true) }}">На главную</a>
+    </p>
+  </div>
+{% endblock %}

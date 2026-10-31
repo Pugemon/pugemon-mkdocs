@@ -1,0 +1,484 @@
+/*
+ * Pugemon — тема для MkDocs Material
+ * Палитра: Gruvbox + бирюза из Monokai + фирменный жёлтый #FFCC00
+ * Две схемы: pugemon-dark (основная) и pugemon-light.
+ * Все пары текст/фон проверены на контраст 4.5:1.
+ */
+
+/* ---------- Токены дизайн-системы ---------- */
+
+[data-md-color-scheme="pugemon-dark"] {
+  color-scheme: dark;
+
+  --pg-bg: #1D2021;
+  --pg-surface: #32302F;
+  --pg-sunken: #141617;
+  --pg-border: #3C3836;
+  --pg-text: #EBDBB2;
+  --pg-muted: #A89984;
+  --pg-brand: #FFCC00;
+  --pg-on-brand: #1D2021;
+  --pg-brand-text: #FFCC00;
+  --pg-link: #66D9EF;
+  --pg-link-hover: #9BE8F6;
+  --pg-accent: #FE8019;
+  --pg-literal: #D3869B;
+  --pg-success: #B8BB26;
+  --pg-success-bg: #2B2E14;
+  --pg-danger: #FF7A6B;
+  --pg-danger-bg: #3A1D19;
+  --pg-warning-bg: #2F2A12;
+  --pg-warning-border: #6A5A14;
+  --pg-warning-text: #F2E5B5;
+  --pg-info-bg: #13292E;
+  --pg-accent-bg: #3A2512;
+  --pg-mark: rgba(255, 204, 0, 0.25);
+}
+
+[data-md-color-scheme="pugemon-light"] {
+  color-scheme: light;
+
+  --pg-bg: #FBF1C7;
+  --pg-surface: #F2E5BC;
+  --pg-sunken: #EBDBB2;
+  --pg-border: #D5C4A1;
+  --pg-text: #282828;
+  --pg-muted: #665C54;
+  --pg-brand: #FFCC00;
+  --pg-on-brand: #282828;
+  --pg-brand-text: #7A5200;
+  --pg-link: #076678;
+  --pg-link-hover: #054A57;
+  --pg-accent: #AF3A03;
+  --pg-literal: #8F3F71;
+  --pg-success: #5E5A0B;
+  --pg-success-bg: #E6E8B8;
+  --pg-danger: #9D0006;
+  --pg-danger-bg: #F6D5CC;
+  --pg-warning-bg: #FBEAA0;
+  --pg-warning-border: #C9A21A;
+  --pg-warning-text: #4A3A00;
+  --pg-info-bg: #D6E8E6;
+  --pg-accent-bg: #F6DCC4;
+  --pg-mark: rgba(255, 204, 0, 0.45);
+}
+
+/* ---------- Переменные Material ---------- */
+
+[data-md-color-scheme^="pugemon-"] {
+  --md-default-bg-color: var(--pg-bg);
+  --md-default-bg-color--light: var(--pg-surface);
+  --md-default-bg-color--lighter: var(--pg-border);
+  --md-default-bg-color--lightest: var(--pg-border);
+
+  --md-default-fg-color: var(--pg-text);
+  --md-default-fg-color--light: var(--pg-muted);
+  --md-default-fg-color--lighter: var(--pg-border);
+  --md-default-fg-color--lightest: var(--pg-surface);
+
+  --md-primary-fg-color: var(--pg-bg);
+  --md-primary-fg-color--light: var(--pg-surface);
+  --md-primary-fg-color--dark: var(--pg-sunken);
+  --md-primary-bg-color: var(--pg-text);
+  --md-primary-bg-color--light: var(--pg-muted);
+
+  --md-accent-fg-color: var(--pg-link-hover);
+  --md-accent-fg-color--transparent: var(--pg-info-bg);
+  --md-accent-bg-color: var(--pg-on-brand);
+  --md-accent-bg-color--light: var(--pg-muted);
+
+  --md-typeset-color: var(--pg-text);
+  --md-typeset-a-color: var(--pg-link);
+  --md-typeset-mark-color: var(--pg-mark);
+  --md-typeset-table-color: var(--pg-border);
+  --md-typeset-table-color--light: var(--pg-surface);
+  --md-typeset-kbd-color: var(--pg-surface);
+  --md-typeset-kbd-accent-color: var(--pg-sunken);
+  --md-typeset-kbd-border-color: var(--pg-border);
+
+  --md-admonition-fg-color: var(--pg-text);
+  --md-admonition-bg-color: var(--pg-bg);
+
+  --md-footer-fg-color: var(--pg-text);
+  --md-footer-fg-color--light: var(--pg-muted);
+  --md-footer-fg-color--lighter: var(--pg-muted);
+  --md-footer-bg-color: var(--pg-sunken);
+  --md-footer-bg-color--dark: var(--pg-sunken);
+
+  --md-shadow-z1: none;
+  --md-shadow-z2: none;
+  --md-shadow-z3: 0 0 0 1px var(--pg-border);
+
+  /* Подсветка кода: роли из брендбука */
+  --md-code-fg-color: var(--pg-text);
+  --md-code-bg-color: var(--pg-sunken);
+  --md-code-bg-color--light: var(--pg-surface);
+  --md-code-bg-color--lighter: var(--pg-border);
+  --md-code-hl-color: var(--pg-brand);
+  --md-code-hl-color--light: var(--pg-mark);
+  --md-code-hl-keyword-color: var(--pg-accent);
+  --md-code-hl-string-color: var(--pg-brand-text);
+  --md-code-hl-function-color: var(--pg-link);
+  --md-code-hl-number-color: var(--pg-literal);
+  --md-code-hl-constant-color: var(--pg-literal);
+  --md-code-hl-special-color: var(--pg-accent);
+  --md-code-hl-name-color: var(--pg-text);
+  --md-code-hl-variable-color: var(--pg-text);
+  --md-code-hl-operator-color: var(--pg-text);
+  --md-code-hl-punctuation-color: var(--pg-muted);
+  --md-code-hl-comment-color: var(--pg-muted);
+  --md-code-hl-generic-color: var(--pg-muted);
+}
+
+/* ---------- Шапка, вкладки, логотип ---------- */
+
+[data-md-color-scheme^="pugemon-"] .md-header {
+  border-bottom: 1px solid var(--pg-border);
+}
+
+[data-md-color-scheme^="pugemon-"] .md-header[data-md-state="shadow"],
+[data-md-color-scheme^="pugemon-"] .md-header--shadow {
+  box-shadow: none;
+}
+
+[data-md-color-scheme^="pugemon-"] .md-tabs {
+  border-bottom: 1px solid var(--pg-border);
+  color: var(--pg-muted);
+}
+
+[data-md-color-scheme^="pugemon-"] .md-tabs__link {
+  opacity: 1;
+  color: var(--pg-muted);
+}
+
+[data-md-color-scheme^="pugemon-"] .md-tabs__link:hover {
+  color: var(--pg-link);
+}
+
+[data-md-color-scheme^="pugemon-"] .md-tabs__item--active .md-tabs__link {
+  color: var(--pg-brand-text);
+}
+
+.md-header__button.md-logo img,
+.md-nav__button.md-logo img {
+  image-rendering: pixelated;
+  height: 1.6rem;
+  width: 1.6rem;
+}
+
+.md-header__topic:first-child {
+  font-family: var(--md-code-font-family);
+  font-weight: 500;
+}
+
+/* ---------- Навигация ---------- */
+
+[data-md-color-scheme^="pugemon-"] .md-nav__link--active,
+[data-md-color-scheme^="pugemon-"] .md-nav__item .md-nav__link--active {
+  color: var(--pg-brand-text);
+  font-weight: 500;
+}
+
+[data-md-color-scheme^="pugemon-"] .md-nav__link:hover,
+[data-md-color-scheme^="pugemon-"] .md-nav__link:focus {
+  color: var(--pg-link);
+}
+
+.md-nav--primary .md-nav__title,
+.md-nav__item--section > .md-nav__link {
+  font-family: var(--md-code-font-family);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--pg-muted);
+}
+
+/* ---------- Поиск ---------- */
+
+[data-md-color-scheme^="pugemon-"] .md-search__form {
+  background-color: var(--pg-surface);
+  border: 1px solid var(--pg-border);
+  border-radius: 6px;
+}
+
+[data-md-color-scheme^="pugemon-"] .md-search__input::placeholder {
+  color: var(--pg-muted);
+}
+
+/* ---------- Типографика ---------- */
+
+[data-md-color-scheme^="pugemon-"] .md-typeset h1 {
+  color: var(--pg-text);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+[data-md-color-scheme^="pugemon-"] .md-typeset h2,
+[data-md-color-scheme^="pugemon-"] .md-typeset h3 {
+  font-weight: 600;
+}
+
+[data-md-color-scheme^="pugemon-"] .md-typeset a:hover {
+  color: var(--pg-link-hover);
+  text-decoration: underline;
+}
+
+[data-md-color-scheme^="pugemon-"] .md-typeset hr {
+  border-bottom-color: var(--pg-border);
+}
+
+/* ---------- Код ---------- */
+
+[data-md-color-scheme^="pugemon-"] .md-typeset pre > code,
+[data-md-color-scheme^="pugemon-"] .md-typeset .highlight {
+  border-radius: 10px;
+}
+
+[data-md-color-scheme^="pugemon-"] .md-typeset pre {
+  border: 1px solid var(--pg-border);
+  border-radius: 10px;
+}
+
+[data-md-color-scheme^="pugemon-"] .md-typeset :not(pre) > code {
+  border-radius: 4px;
+  color: var(--pg-brand-text);
+  background-color: var(--pg-surface);
+}
+
+/* Заголовок блока кода (title="main.go") как шапка окна */
+[data-md-color-scheme^="pugemon-"] .md-typeset .highlight span.filename {
+  background-color: var(--pg-surface);
+  color: var(--pg-muted);
+  font-family: var(--md-code-font-family);
+  font-weight: 400;
+  border: 1px solid var(--pg-border);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+}
+
+[data-md-color-scheme^="pugemon-"] .md-typeset .highlight span.filename + pre,
+[data-md-color-scheme^="pugemon-"] .md-typeset .highlight span.filename + pre > code {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Промпт консоли — акцентный цвет */
+[data-md-color-scheme^="pugemon-"] .md-typeset .highlight .gp {
+  color: var(--pg-accent);
+}
+
+[data-md-color-scheme^="pugemon-"] .md-typeset .highlight .go {
+  color: var(--pg-muted);
+}
+
+[data-md-color-scheme^="pugemon-"] .md-typeset .highlight .gi { color: var(--pg-success); }
+[data-md-color-scheme^="pugemon-"] .md-typeset .highlight .gd { color: var(--pg-danger); }
+
+/* Препроцессор C++ (#include, #define) */
+[data-md-color-scheme^="pugemon-"] .md-typeset .highlight .cp,
+[data-md-color-scheme^="pugemon-"] .md-typeset .highlight .cpf {
+  color: var(--pg-accent);
+  font-style: normal;
+}
+
+/* Типы (int, std::string, error) */
+[data-md-color-scheme^="pugemon-"] .md-typeset .highlight .kt,
+[data-md-color-scheme^="pugemon-"] .md-typeset .highlight .nc {
+  color: var(--pg-brand-text);
+}
+
+/* Декораторы Python */
+[data-md-color-scheme^="pugemon-"] .md-typeset .highlight .nd {
+  color: var(--pg-accent);
+}
+
+/* ---------- Вкладки (Python / C++ / Go) ---------- */
+
+[data-md-color-scheme^="pugemon-"] .md-typeset .tabbed-labels > label {
+  color: var(--pg-muted);
+  font-family: var(--md-code-font-family);
+}
+
+[data-md-color-scheme^="pugemon-"] .md-typeset .tabbed-labels > label:hover {
+  color: var(--pg-link);
+}
+
+[data-md-color-scheme^="pugemon-"] .md-typeset .tabbed-set > input:checked + label,
+[data-md-color-scheme^="pugemon-"] .md-typeset .tabbed-labels > label.tabbed-labels--active {
+  color: var(--pg-brand-text);
+}
+
+[data-md-color-scheme^="pugemon-"] .md-typeset .tabbed-labels::before {
+  background: var(--pg-brand);
+}
+
+/* ---------- Блоки-примечания ---------- */
+
+[data-md-color-scheme^="pugemon-"] .md-typeset .admonition,
+[data-md-color-scheme^="pugemon-"] .md-typeset details {
+  border: 1px solid var(--pg-border);
+  border-radius: 10px;
+  box-shadow: none;
+  background-color: var(--pg-bg);
+}
+
+[data-md-color-scheme^="pugemon-"] .md-typeset .admonition-title,
+[data-md-color-scheme^="pugemon-"] .md-typeset summary {
+  font-weight: 600;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Примечание, инфо, абстракт — бирюза */
+[data-md-color-scheme^="pugemon-"] .md-typeset :is(.note, .info, .abstract, .todo, .question) {
+  border-color: var(--pg-link);
+}
+[data-md-color-scheme^="pugemon-"] .md-typeset :is(.note, .info, .abstract, .todo, .question) > :is(.admonition-title, summary) {
+  background-color: var(--pg-info-bg);
+  color: var(--pg-text);
+}
+[data-md-color-scheme^="pugemon-"] .md-typeset :is(.note, .info, .abstract, .todo, .question) > :is(.admonition-title, summary)::before {
+  background-color: var(--pg-link);
+}
+
+/* Совет, успех — зелёный */
+[data-md-color-scheme^="pugemon-"] .md-typeset :is(.tip, .success) {
+  border-color: var(--pg-success);
+}
+[data-md-color-scheme^="pugemon-"] .md-typeset :is(.tip, .success) > :is(.admonition-title, summary) {
+  background-color: var(--pg-success-bg);
+  color: var(--pg-text);
+}
+[data-md-color-scheme^="pugemon-"] .md-typeset :is(.tip, .success) > :is(.admonition-title, summary)::before {
+  background-color: var(--pg-success);
+}
+
+/* Предупреждение — фирменный жёлтый */
+[data-md-color-scheme^="pugemon-"] .md-typeset .warning {
+  border-color: var(--pg-warning-border);
+  background-color: var(--pg-warning-bg);
+}
+[data-md-color-scheme^="pugemon-"] .md-typeset .warning > :is(.admonition-title, summary) {
+  background-color: var(--pg-warning-bg);
+  color: var(--pg-warning-text);
+}
+[data-md-color-scheme^="pugemon-"] .md-typeset .warning > :is(.admonition-title, summary)::before {
+  background-color: var(--pg-brand-text);
+}
+[data-md-color-scheme^="pugemon-"] .md-typeset .warning > :not(.admonition-title):not(summary) {
+  color: var(--pg-warning-text);
+}
+
+/* Опасность, ошибка, баг — красный */
+[data-md-color-scheme^="pugemon-"] .md-typeset :is(.danger, .failure, .bug) {
+  border-color: var(--pg-danger);
+}
+[data-md-color-scheme^="pugemon-"] .md-typeset :is(.danger, .failure, .bug) > :is(.admonition-title, summary) {
+  background-color: var(--pg-danger-bg);
+  color: var(--pg-text);
+}
+[data-md-color-scheme^="pugemon-"] .md-typeset :is(.danger, .failure, .bug) > :is(.admonition-title, summary)::before {
+  background-color: var(--pg-danger);
+}
+
+/* Пример, цитата — медь */
+[data-md-color-scheme^="pugemon-"] .md-typeset :is(.example, .quote) {
+  border-color: var(--pg-accent);
+}
+[data-md-color-scheme^="pugemon-"] .md-typeset :is(.example, .quote) > :is(.admonition-title, summary) {
+  background-color: var(--pg-accent-bg);
+  color: var(--pg-text);
+}
+[data-md-color-scheme^="pugemon-"] .md-typeset :is(.example, .quote) > :is(.admonition-title, summary)::before {
+  background-color: var(--pg-accent);
+}
+
+/* ---------- Таблицы ---------- */
+
+[data-md-color-scheme^="pugemon-"] .md-typeset table:not([class]) {
+  border: 1px solid var(--pg-border);
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+[data-md-color-scheme^="pugemon-"] .md-typeset table:not([class]) th {
+  background-color: var(--pg-surface);
+  font-family: var(--md-code-font-family);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Кнопки ---------- */
+
+[data-md-color-scheme^="pugemon-"] .md-typeset .md-button {
+  border: 1px solid var(--pg-border);
+  border-radius: 6px;
+  color: var(--pg-text);
+  font-weight: 500;
+}
+
+[data-md-color-scheme^="pugemon-"] .md-typeset .md-button:hover {
+  border-color: var(--pg-link);
+  background-color: transparent;
+  color: var(--pg-link);
+}
+
+[data-md-color-scheme^="pugemon-"] .md-typeset .md-button--primary {
+  background-color: var(--pg-brand);
+  border-color: var(--pg-brand);
+  color: var(--pg-on-brand);
+  font-weight: 600;
+}
+
+[data-md-color-scheme^="pugemon-"] .md-typeset .md-button--primary:hover {
+  background-color: var(--pg-brand);
+  border-color: var(--pg-brand);
+  color: var(--pg-on-brand);
+  filter: brightness(1.08);
+}
+
+/* ---------- Метки статуса: <span class="pg-tag pg-tag--ok">готово</span> ---------- */
+
+.md-typeset .pg-tag {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 4px;
+  font-family: var(--md-code-font-family);
+  font-size: 0.75em;
+  background-color: var(--pg-surface);
+  color: var(--pg-muted);
+}
+.md-typeset .pg-tag--ok { background-color: var(--pg-success-bg); color: var(--pg-success); }
+.md-typeset .pg-tag--wip { background-color: var(--pg-accent-bg); color: var(--pg-accent); }
+.md-typeset .pg-tag--bad { background-color: var(--pg-danger-bg); color: var(--pg-danger); }
+
+/* ---------- API-справка (mkdocstrings) ---------- */
+
+[data-md-color-scheme^="pugemon-"] .md-typeset .doc-heading code {
+  color: var(--pg-link);
+  background: none;
+}
+
+[data-md-color-scheme^="pugemon-"] .md-typeset .doc-label code,
+[data-md-color-scheme^="pugemon-"] .md-typeset .doc-symbol {
+  color: var(--pg-accent);
+}
+
+[data-md-color-scheme^="pugemon-"] .md-typeset .doc-signature {
+  border-radius: 10px;
+}
+
+/* ---------- Подвал ---------- */
+
+[data-md-color-scheme^="pugemon-"] .md-footer,
+[data-md-color-scheme^="pugemon-"] .md-footer-meta {
+  border-top: 1px solid var(--pg-border);
+}
+
+/* ---------- Пиксель-арт в тексте ---------- */
+
+.md-typeset img.pixel,
+.md-typeset .pixel img {
+  image-rendering: pixelated;
+}
